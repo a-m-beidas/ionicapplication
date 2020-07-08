@@ -1,14 +1,14 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab1.css';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import RegisterContainer from '../components/RegisterContainer';
+import './RegisterTab.css';
 
-const Tab1: React.FC = () => {
+const RegisterTab: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Register Tab</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -17,10 +17,10 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 1</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <RegisterContainer/>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default RegisterTab;

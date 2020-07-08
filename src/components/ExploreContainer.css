@@ -22,3 +22,35 @@
 .container a {
   text-decoration: none;
 }
+
+.credentialsContainer {
+  text-align: left;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  min-height: 120%;
+  transform: translateY(-50%);
+}
+
+.formCredentialsContainer {
+  top: 20%;
+  left: 5.5%;
+  position: absolute;
+  height: 120%;
+}
+
+.credentialsInput {
+  border-radius: 10px !important;
+  --background: rgb(219,219,219) !important;
+  /* height: 10%; */
+  /* width: 41%; */
+  max-width: 50vw;
+  max-height: 10vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.credentialsButton {
+  min-width: 40vw;
+}
