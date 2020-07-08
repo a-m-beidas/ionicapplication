@@ -3,16 +3,16 @@ import {IonLabel, IonInput, IonButton, IonTitle, IonList} from '@ionic/react';
 import './ExploreContainer.css';
 import { Connection} from'./Connection'
 import { InputField, Validation } from './Validation'
-
+import {rerender} from '../index'
 
 const { loginValidity, emailRegex } = Validation
 
-
 var disableSubmit: boolean = true
-const LoginContainer: React.FC = (props) => {
+const LoginContainer: React.FC = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
     async function submitLogin() {
       let result = await Connection.post('/login', { 
         email : email,
@@ -22,8 +22,8 @@ const LoginContainer: React.FC = (props) => {
         alert(result.error);
       } else {
         Connection.loggedIn.user = result;
-        alert('Logged In')
       }
+      rerender()
     }
 
     function onInputChanged(newText:string, field: InputField) {
@@ -46,14 +46,13 @@ const LoginContainer: React.FC = (props) => {
       }
       disableSubmit = loginValidity.count !== 2
     }
-
     return (
       <IonList className="credentialsContainer">
         <IonTitle>Enter Credentials</IonTitle>
         <form onSubmit={submitLogin}>
           <IonList className="formCredentialsContainer">
               <IonLabel>
-                  Email
+                  Username
               </IonLabel>
               <IonInput
                   className="credentialsInput"
