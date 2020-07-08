@@ -34,10 +34,12 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const App: React.FC = () => {
-  function logConnection() {
-    alert(JSON.stringify(Connection.loggedIn))
-  }
+interface Props {
+  loggedIn: any
+}
+
+
+const App: React.FC<Props> = () => {
   return (
   <IonApp>
     <IonReactRouter>
@@ -53,7 +55,7 @@ const App: React.FC = () => {
             <IonIcon icon={addOutline} />
             <IonLabel>Register</IonLabel>
           </IonTabButton>
-          <IonTabButton onClick={logConnection} tab="logInTab" href="/login">
+          <IonTabButton tab="logInTab" href="/login">
             <IonIcon icon={logInOutline} />
             <IonLabel>Login</IonLabel>
           </IonTabButton>
